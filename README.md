@@ -15,8 +15,8 @@ The **Wireless UAV Link Budget Analysis Tool** is a Python application designed 
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/wireless-uav-link-budget-analysis.git
-    cd wireless-uav-link-budget-analysis
+    git clone https://github.com/kayteekay1412/Link-Budget-Analysis.git
+    cd Link-Budget-Analysis
     ```
 
 2. **Install Dependencies**:
@@ -27,7 +27,7 @@ The **Wireless UAV Link Budget Analysis Tool** is a Python application designed 
 
 3. **Run the Application**:
     ```bash
-    python main.py
+    python Final_mod_linkbudget.py
     ```
 
 4. **Enter Parameters**:
