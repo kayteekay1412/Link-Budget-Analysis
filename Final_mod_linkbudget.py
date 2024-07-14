@@ -1,10 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import tkinter as tk
 import matplotlib.pyplot as plt
 import numpy as np 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
 # Define parameters
 # distance = 100 # in meters
 # transmit_power = 10  # in watts
@@ -13,26 +11,21 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 # wavelength = 0.024  # in meters
 # minimum_acceptable_signal_power = -100  # in dBm
 
-
 def plot_graph():
     try:
         distance1 = float(input_field.get())
-        distance = np.arange(distance1, 1000, 10)  # in meters
+        
+        distance = np.arange(distance1, 1000, 10)
         
         tr_pwr = float(input_field1.get())
-#         tr_pwr = np.arange(tr_pwr1, 20, 1)  # in watts
         
         tr_ant_gain = float(input_field2.get())
-#         tr_ant_gain = np.arange(tr_ant_gain1, 20, 1)  # in dB
         
         re_ant_gain = float(input_field3.get())
-#         re_ant_gain = np.arange(re_ant_gain1, 20, 1)  # in dB
         
         WL = float(input_field4.get())
-#         WL = np.arange(WL1, 1, 0.1)  # in meters
         
         min_acc_sig_pwr = float(input_field5.get())
-#         min_acc_sig_pwr = np.arange(min_acc_sig_pwr1, 0, -100)  # in dbm
         
         # Calculate path loss and received signal power
         path_loss = 10 * np.log10((4 * np.pi * distance**2) / (tr_pwr * tr_ant_gain * re_ant_gain * WL**2))
@@ -69,7 +62,7 @@ font2 = ('Times New Roman', 12)
 label.pack(padx=20, pady=20)
 label1.pack(padx=20, pady=20)
 
-label2 = tk.Label(root, text="This application can be used for design and analysis of drone assitive wireless communication system link. Enter your link data with the reference to unit value mentioned, observe the link margin available with respect to different distance", font=font2, fg='purple')
+label2 = tk.Label(root, text="This application can be used for the design and analysis of drone assitive wireless communication system link. Enter your link data with the reference to unit value mentioned, observe the link margin available with respect to different distances", font=font2, fg='purple')
 label2.pack(padx=20, pady=20)
 # Create input field for distance
 input_field = tk.Label(root, text="Enter the Distance of the Drone in metres (For example: 10-1000 metres):", font=font2)
@@ -82,7 +75,6 @@ input_field1 = tk.Label(root, text="Enter Transmit power in watts (For example: 
 input_field1.pack()
 input_field1 = tk.Entry(root, width=20)
 input_field1.pack()
-# input_field1 = tk.Label(root, text="(eg. 10 watts)", font=font2)
 # input_field1.pack()
 
 #Create input field for transmit antenna gain
@@ -121,8 +113,4 @@ input_field5.pack()
 plot_button = tk.Button(root, text="Plot Graph", command=plot_graph, font=font2)
 plot_button.pack()
 
-
 root.mainloop()
-
-
-
